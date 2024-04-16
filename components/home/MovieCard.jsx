@@ -1,24 +1,11 @@
 import { getGenre } from "@/utils/getGenre";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const MovieCard = ({ movie }) => {
-	const {
-		adult,
-		backdrop_path,
-		genre_ids,
-		id,
-		original_language,
-		original_title,
-		overview,
-		popularity,
-		poster_path,
-		release_date,
-		title,
-		video,
-		vote_average,
-		vote_count,
-	} = movie || {};
+	const { genre_ids, id, poster_path, title, vote_average, vote_count } =
+		movie || {};
 
 	// genres
 	const genres = genre_ids?.map(async (g_id, index, array) => {
@@ -70,16 +57,16 @@ const MovieCard = ({ movie }) => {
 						alt=""
 					/>
 				</div>
-				<a
+				<Link
+					href={`/movies/${id}`}
 					class="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
-					href="./modal.html"
 				>
 					<img
 						src="/tag.svg"
 						alt=""
 					/>
 					<span>Details</span>
-				</a>
+				</Link>
 			</figcaption>
 		</figure>
 	);

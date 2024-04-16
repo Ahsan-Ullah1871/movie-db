@@ -11,7 +11,7 @@ export const getMovieDetails = async (movieID) => {
 	if (movie) {
 		return movie;
 	} else {
-		throw new Error("Movie not found");
+		throw new Error(`This movie with ${movieID} id was not found!`);
 	}
 };
 

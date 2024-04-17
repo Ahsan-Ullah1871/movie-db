@@ -1,80 +1,75 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ALink from "../ui/ALink";
 
-const Sidebar = () => {
+const Sidebar = ({ dict }) => {
 	return (
 		<aside>
 			<ul class="space-y-2">
 				<li>
-					<Link
+					<ALink
 						class="flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-primary text-black"
 						href="/"
 					>
 						<Image
-							src="/icons/trending.svg"
+							src="/image/icons/trending.svg"
 							width="24"
 							height="24"
 							alt="Logo"
 						/>
-						<span>Trending</span>
-					</Link>
+						<span>{dict.sidebar.trending}</span>
+					</ALink>
 				</li>
 				<li>
-					<a
-						class="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-						href="#"
-					>
+					<ALink class="flex items-center space-x-2 px-5 py-3.5 rounded-lg">
 						<Image
-							src="/icons/newRelease.svg"
+							src="/image/icons/newRelease.svg"
 							width="24"
 							height="24"
 							alt=""
 						/>
-						<span>New Releases</span>
-					</a>
+						<span>
+							{dict.sidebar.new_release}
+						</span>
+					</ALink>
 				</li>
 				<li>
-					<a
-						class="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-						href="#"
-					>
+					<ALink class="flex items-center space-x-2 px-5 py-3.5 rounded-lg">
 						<Image
-							src="/icons/commingSoon.svg"
+							src="/image/icons/commingSoon.svg"
 							width="24"
 							height="24"
 							alt=""
 						/>
-						<span>Coming Soon</span>
-					</a>
+						<span>
+							{dict.sidebar.coming_soon}
+						</span>
+					</ALink>
 				</li>
 				<li>
-					<a
-						class="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-						href="#"
-					>
+					<ALink class="flex items-center space-x-2 px-5 py-3.5 rounded-lg">
 						<Image
-							src="/icons/favourite.svg"
+							src="/image/icons/favourite.svg"
 							width="24"
 							height="24"
 							alt=""
 						/>
-						<span>Favourites</span>
-					</a>
+						<span> {dict.sidebar.favorites}</span>
+					</ALink>
 				</li>
 				<li>
-					<a
-						class="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-						href="#"
-					>
+					<ALink class="flex items-center space-x-2 px-5 py-3.5 rounded-lg">
 						<Image
-							src="/icons/watchLater.svg"
+							src="/image/icons/watchLater.svg"
 							width="24"
 							height="24"
 							alt=""
 						/>
-						<span>Watch Later</span>
-					</a>
+						<span>
+							{dict.sidebar.watch_later}
+						</span>
+					</ALink>
 				</li>
 			</ul>
 		</aside>

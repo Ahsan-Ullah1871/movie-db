@@ -1,13 +1,14 @@
 import Link from "next/link";
+import ALink from "../ui/ALink";
 
 const CustomLink = ({ children, href, className }) => {
 	return (
-		<Link
+		<ALink
 			className={className}
 			href={href}
 		>
 			{children}
-		</Link>
+		</ALink>
 	);
 };
 

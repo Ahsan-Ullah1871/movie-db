@@ -13,7 +13,7 @@ const OOPS = ({
 	return (
 		<div className=" max-w-lg mx-auto  flex flex-col items-center justify-center py-40">
 			<Image
-				src={"/oops.png"}
+				src={"/image/oops.png"}
 				alt="error"
 				width={320}
 				height={320}

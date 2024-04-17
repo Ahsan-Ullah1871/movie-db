@@ -1,7 +1,7 @@
 import MovieDetailsPage from "@/containers/movieDetails/MovieDetailsPage";
 import React from "react";
 
-const page = ({ params }) => {
+const page = async ({ params }) => {
 	return <MovieDetailsPage params={params} />;
 };
 

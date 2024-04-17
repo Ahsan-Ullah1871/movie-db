@@ -1,12 +1,11 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ dict }) => {
 	return (
 		<footer class="py-6 md:py-8 mt-8">
 			<div class="container mx-auto">
 				<p class="text-center text-sm text-black/30 dark:text-[#EEEEEE]/60">
-					Copyright ©2023 | All rights reserved by
-					Learn with Sumit
+					{dict.footer.copyright_text}
 				</p>
 			</div>
 		</footer>
@@ -14,3 +13,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

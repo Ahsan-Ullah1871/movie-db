@@ -2,7 +2,7 @@ import MovieCard from "@/components/home/MovieCard";
 import { getMovies } from "@/utils/getMovies";
 import React from "react";
 
-const HomePage = async () => {
+const HomePage = async ({ dict }) => {
 	const movies = await getMovies(); // en
 
 	return (
@@ -12,6 +12,7 @@ const HomePage = async () => {
 					<MovieCard
 						movie={movie}
 						key={movie.id}
+						dict={dict}
 					/>
 				))}
 			</div>

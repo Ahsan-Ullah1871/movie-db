@@ -1,0 +1,24 @@
+{
+    "sidebar": {
+        "trending": "ট্রেন্ডিং",
+        "new_release": "নতুন রিলিজ",
+        "coming_soon": "শীঘ্রই আসছে",
+        "favorites": "প্রিয়সমূহ",
+        "watch_later": "পরে দেখুন"
+    },
+    "movie": {
+        "details": "বিস্তারিত"
+    },
+    "movie_details": {
+        "release_date": "রিলিজ তারিখ",
+        "average_vote": "গড় ভোট",
+        "vote_count": "ভোট গণনা",
+        "popularity": "জনপ্রিয়তা",
+        "overview": "সংক্ষিপ্ত বিবরণ",
+        "stream_in_hd": "এইচডি স্ট্রীম করুন",
+        "download_in_hd": "এইচডি ডাউনলোড করুন"
+    },
+    "footer": {
+        "copyright_text": "কপিরাইট ©2023 | সর্বস্বত্ব সংরক্ষিত Learn with Sumit দ্বারা"
+    }
+}

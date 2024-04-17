@@ -1,8 +1,11 @@
+import { getDictionary } from "@/utils/dictionaries";
 import { getMovieDetails } from "@/utils/getMovieDetials";
 import Image from "next/image";
 import React from "react";
 
-const MovieDetailsPage = async ({ params: { movieId } }) => {
+const MovieDetailsPage = async ({ params: { movieId, lang } }) => {
+	const dict = await getDictionary(lang ?? "en"); // en
+	console.log(dict);
 	const {
 		adult,
 		backdrop_path,
@@ -48,18 +51,42 @@ const MovieDetailsPage = async ({ params: { movieId } }) => {
 						{overview}
 					</p>
 					<ul class="text-slate-300 space-y-2 my-8">
-						<li>Release Date : {release_date}</li>
-						<li>Average Vote : {vote_average}</li>
-						<li>Vote Count : {vote_count}</li>
-						<li>Popularity : {popularity}</li>
+						<li>
+							{
+								dict?.movie_details
+									?.release_date
+							}{" "}
+							: {release_date}
+						</li>
+						<li>
+							{
+								dict?.movie_details
+									?.average_vote
+							}{" "}
+							: {vote_average}
+						</li>
+						<li>
+							{
+								dict?.movie_details
+									?.vote_count
+							}{" "}
+							: {vote_count}
+						</li>
+						<li>
+							{
+								dict?.movie_details
+									?.popularity
+							}{" "}
+							: {popularity}
+						</li>
 					</ul>
 				</div>
 				<div class="col-span-2 space-y-4">
 					<button class="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-						Stream In HD
+						{dict?.movie_details?.stream_in_hd}
 					</button>
 					<button class="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-						Download In HD
+						{dict?.movie_details?.download_in_hd}
 					</button>
 				</div>
 			</div>

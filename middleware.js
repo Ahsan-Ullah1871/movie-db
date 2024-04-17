@@ -20,36 +20,20 @@ export function middleware(request) {
 
 	const pathNameIsMissingLocale = locales.every(
 		(locale) =>
-			!pathname.startsWith(`/${locale}`) &&
-			!pathname.startsWith(`/${locale}/`)
+			!pathname.startsWith(`/${locale}/`) &&
+			!pathname.startsWith(`/${locale}`)
 	);
-
-	// response
-	const response = NextResponse.next();
 
 	if (pathNameIsMissingLocale) {
 		// detect user's preference & redirect with a locale with a path eg: /en/about
-		const is_available_in_cookie = request.cookies.has("locale");
-
-		const locale = is_available_in_cookie
-			? request.cookies.get("locale")
-			: getLocale(request);
-
-		response.cookies.set({
-			name: "locale",
-			value: locale,
-			path: "*",
-		});
-
-		const cookie = response.cookies.get("locale");
-		console.log({ cookie });
+		const locale = getLocale(request);
 
 		return NextResponse.redirect(
 			new URL(`/${locale}/${pathname}`, request.url)
 		);
 	}
 
-	return response;
+	return NextResponse.next();
 }
 
 export const config = {

@@ -1,15 +1,14 @@
 "use client";
 import OOPS from "@/components/errors/OOPS";
 import CustomLink from "@/components/link/CustomLink";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const PageNotFound = ({ error }) => {
+	const params = useParams();
 	return (
 		<OOPS
-			message={
-				error.message ??
-				"Movie Not Found! Please check the URL and try again."
-			}
+			message={`This movie with ${params?.movieId} id was not found!`}
 			spacial_text={"⚠️"}
 			isShowHomeBtn={true}
 		>

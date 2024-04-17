@@ -5,10 +5,19 @@ import { useParams } from "next/navigation";
 import React from "react";
 
 const PageNotFound = ({ error }) => {
-	const params = useParams();
+	const { movieId, lang } = useParams();
+
 	return (
 		<OOPS
-			message={`This movie with ${params?.movieId} id was not found!`}
+			message={
+				lang === "en"
+					? `This movie with ${
+							movieId ?? ""
+					  } id was not found!`
+					: `এই মুভি এর সাথে ${
+							movieId ?? ""
+					  } আইডি পাওয়া যায়নি!`
+			}
 			spacial_text={"⚠️"}
 			isShowHomeBtn={true}
 		>

@@ -10,13 +10,13 @@ const PageNotFound = ({ error }) => {
 	return (
 		<OOPS
 			message={
-				lang === "en"
-					? `This movie with ${
-							movieId ?? ""
-					  } id was not found!`
-					: `এই মুভি এর সাথে ${
+				lang === "bn"
+					? `এই মুভি এর সাথে ${
 							movieId ?? ""
 					  } আইডি পাওয়া যায়নি!`
+					: `This movie with ${
+							movieId ?? ""
+					  } id was not found!`
 			}
 			spacial_text={"⚠️"}
 			isShowHomeBtn={true}
@@ -25,7 +25,9 @@ const PageNotFound = ({ error }) => {
 				href={"/"}
 				className="w-full   bg-primary hover:bg-[#3a3a3a] text-center py-3 mt-5 text-white rounded-full duration-300"
 			>
-				Go To Trending
+				{lang === "bn"
+					? "ট্রেডিং এ ফিরুন"
+					: "Go To Trending"}
 			</CustomLink>
 		</OOPS>
 	);
